@@ -1,5 +1,4 @@
 #include "MagicalContainer.hpp"
-
 using namespace ariel;
 
 void MagicalContainer::addElement(int element) {
@@ -20,11 +19,11 @@ MagicalContainer::AscendingIterator::AscendingIterator(const MagicalContainer& c
     std::sort(sortedElements.begin(), sortedElements.end());
 }
 
-vector<int>::const_iterator MagicalContainer::AscendingIterator::begin() const {
+vector<int>::iterator MagicalContainer::AscendingIterator::begin() {
     return sortedElements.begin();
 }
 
-vector<int>::const_iterator MagicalContainer::AscendingIterator::end() const {
+vector<int>::iterator MagicalContainer::AscendingIterator::end(){
     return sortedElements.end();
 }
 
@@ -47,11 +46,11 @@ MagicalContainer::SideCrossIterator::SideCrossIterator(const MagicalContainer& c
     }
 }
 
-std::vector<int>::const_iterator MagicalContainer::SideCrossIterator::begin() const {
+std::vector<int>::iterator MagicalContainer::SideCrossIterator::begin() {
     return crossElements.begin();
 }
 
-std::vector<int>::const_iterator MagicalContainer::SideCrossIterator::end() const {
+std::vector<int>::iterator MagicalContainer::SideCrossIterator::end() {
     return crossElements.end();
 }
 
@@ -77,11 +76,11 @@ MagicalContainer::PrimeIterator::PrimeIterator(const MagicalContainer& container
     }
 }
 
-vector<int>::const_iterator MagicalContainer::PrimeIterator::begin() const {
+vector<int>::iterator MagicalContainer::PrimeIterator::begin() {
     return primeElements.begin();
 }
 
-vector<int>::const_iterator MagicalContainer::PrimeIterator::end() const {
+vector<int>::iterator MagicalContainer::PrimeIterator::end() {
     return primeElements.end();
 }
 
@@ -91,10 +90,10 @@ MagicalContainer::DescendingIterator::DescendingIterator(const MagicalContainer&
     std::sort(sortedElements.rbegin(), sortedElements.rend());
 }
 
-std::vector<int>::const_iterator MagicalContainer::DescendingIterator::begin() const {
+std::vector<int>::iterator MagicalContainer::DescendingIterator::begin() {
     return sortedElements.begin();
 }
 
-std::vector<int>::const_iterator MagicalContainer::DescendingIterator::end() const {
+std::vector<int>::iterator MagicalContainer::DescendingIterator::end() {
     return sortedElements.end();
 }

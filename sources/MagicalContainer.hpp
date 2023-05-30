@@ -33,8 +33,8 @@ namespace ariel{
         AscendingIterator(const MagicalContainer& container);//Default constructor
         AscendingIterator(const AscendingIterator& other);//Copy constructor
         ~AscendingIterator() = default;//Destructor
-        vector<int>::const_iterator begin() const;
-        vector<int>::const_iterator end() const;
+        vector<int>::iterator begin() ;
+        vector<int>::iterator end();
         //operators
         AscendingIterator& operator=(const AscendingIterator& other);//Assignment operator
         bool operator==(const AscendingIterator& other) const{return false;}//Equality comparison (operator==)
@@ -53,8 +53,8 @@ namespace ariel{
         DescendingIterator(const MagicalContainer& container);
         DescendingIterator(const DescendingIterator& other);
         ~DescendingIterator() = default;
-        vector<int>::const_iterator begin() const;
-        vector<int>::const_iterator end() const;
+        vector<int>::iterator begin();
+        vector<int>::iterator end();
         //operators
         DescendingIterator& operator=(const DescendingIterator& other);
         bool operator==(const DescendingIterator& other) const {return false;}
@@ -71,8 +71,8 @@ namespace ariel{
         SideCrossIterator(const MagicalContainer& container);
         SideCrossIterator(const SideCrossIterator& other);
         ~SideCrossIterator() = default;
-        vector<int>::const_iterator begin() const;
-        vector<int>::const_iterator end() const;
+        vector<int>::iterator begin();
+        vector<int>::iterator end();
         //operators
         SideCrossIterator& operator=(const SideCrossIterator& other);
         bool operator==(const SideCrossIterator& other) const{return false;}
@@ -89,8 +89,8 @@ namespace ariel{
         PrimeIterator(const MagicalContainer& container);
         PrimeIterator(const PrimeIterator& other);
         ~PrimeIterator() = default;
-        vector<int>::const_iterator begin() const;
-        vector<int>::const_iterator end() const;
+        vector<int>::iterator begin();
+        vector<int>::iterator end();
         //operators
         PrimeIterator& operator=(const PrimeIterator& other);
         bool operator==(const PrimeIterator& other) const{return false;}
