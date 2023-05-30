@@ -35,6 +35,7 @@ int main() {
     for (auto it = primeIter.begin(); it != primeIter.end(); ++it) {
         std::cout << *it << ' ';  // 2 3 17 
     }
+
     std::cout << std::endl;
 
     // Remove an element from the container and display the size

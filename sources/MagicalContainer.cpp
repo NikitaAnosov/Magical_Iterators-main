@@ -6,7 +6,14 @@ void MagicalContainer::addElement(int element) {
 }
 
 void MagicalContainer::removeElement(int element) {
-    elements.erase(std::remove(elements.begin(), elements.end(), element), elements.end());
+    for (auto it = elements.begin(); it != elements.end();) {
+        if (*it == element) {
+            it = elements.erase(it);
+        }
+        else {
+            ++it;
+        }
+    }
 }
 
 int MagicalContainer::size() const {
