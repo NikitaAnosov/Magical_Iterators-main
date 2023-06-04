@@ -34,14 +34,14 @@ MagicalContainer::AscendingIterator::AscendingIterator(const MagicalContainer &c
     std::sort(sortedElements.begin(), sortedElements.end());
 }
 
-vector<int>::iterator MagicalContainer::AscendingIterator::begin()
+MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::begin()
 {
-    return sortedElements.begin();
+    return AscendingIterator(container);
 }
 
-vector<int>::iterator MagicalContainer::AscendingIterator::end()
+MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end()
 {
-    return sortedElements.end();
+    return AscendingIterator(container);
 }
 
 MagicalContainer::SideCrossIterator::SideCrossIterator(const MagicalContainer &container)
@@ -65,14 +65,14 @@ MagicalContainer::SideCrossIterator::SideCrossIterator(const MagicalContainer &c
     }
 }
 
-std::vector<int>::iterator MagicalContainer::SideCrossIterator::begin()
+MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::begin()
 {
-    return crossElements.begin();
+    return SideCrossIterator(container);
 }
 
-std::vector<int>::iterator MagicalContainer::SideCrossIterator::end()
+MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::end()
 {
-    return crossElements.end();
+    return SideCrossIterator(container);
 }
 
 MagicalContainer::PrimeIterator::PrimeIterator(const MagicalContainer &container)
@@ -107,14 +107,14 @@ MagicalContainer::PrimeIterator::PrimeIterator(const MagicalContainer &container
     std::sort(primeElements.begin(), primeElements.end());
 }
 
-vector<int>::iterator MagicalContainer::PrimeIterator::begin()
+MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::begin()
 {
-    return primeElements.begin();
+    return PrimeIterator(container);
 }
 
-vector<int>::iterator MagicalContainer::PrimeIterator::end()
+MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end()
 {
-    return primeElements.end();
+    return PrimeIterator(container);
 }
 
 MagicalContainer::DescendingIterator::DescendingIterator(const MagicalContainer &container)
@@ -124,12 +124,12 @@ MagicalContainer::DescendingIterator::DescendingIterator(const MagicalContainer 
     std::sort(sortedElements.rbegin(), sortedElements.rend());
 }
 
-std::vector<int>::iterator MagicalContainer::DescendingIterator::begin()
+MagicalContainer::DescendingIterator MagicalContainer::DescendingIterator::begin()
 {
-    return sortedElements.begin();
+    return DescendingIterator(container);
 }
 
-std::vector<int>::iterator MagicalContainer::DescendingIterator::end()
+MagicalContainer::DescendingIterator MagicalContainer::DescendingIterator::end()
 {
-    return sortedElements.end();
+    return DescendingIterator(container);
 }

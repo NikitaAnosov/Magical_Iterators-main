@@ -19,6 +19,7 @@ namespace ariel{
         void addElement(int element);
         void removeElement(int element);
         int size() const;
+
         class AscendingIterator;
         class DescendingIterator;
         class SideCrossIterator;
@@ -33,15 +34,16 @@ namespace ariel{
         AscendingIterator(const MagicalContainer& container);//Default constructor
         AscendingIterator(const AscendingIterator& other);//Copy constructor
         ~AscendingIterator() = default;//Destructor
-        vector<int>::iterator begin() ;
-        vector<int>::iterator end();
+        AscendingIterator begin() ;
+        AscendingIterator end();
         //operators
-        AscendingIterator& operator=(const AscendingIterator& other);//Assignment operator
+        // AscendingIterator& operator=(const AscendingIterator& other);//Assignment operator
         bool operator==(const AscendingIterator& other) const{return false;}//Equality comparison (operator==)
         bool operator!=(const AscendingIterator& other) const{return false;}//Inequality comparison (operator!=)
         bool operator>(const AscendingIterator& other) const{return false;}//GT
         bool operator<(const AscendingIterator& other) const{return false;}//LT
-        
+        int operator*() const{return 0;}
+        AscendingIterator& operator++() {return *this;}//++i
     };
 
     class MagicalContainer::DescendingIterator {
@@ -53,14 +55,16 @@ namespace ariel{
         DescendingIterator(const MagicalContainer& container);
         DescendingIterator(const DescendingIterator& other);
         ~DescendingIterator() = default;
-        vector<int>::iterator begin();
-        vector<int>::iterator end();
+        DescendingIterator begin();
+        DescendingIterator end();
         //operators
-        DescendingIterator& operator=(const DescendingIterator& other);
+        // DescendingIterator& operator=(const DescendingIterator& other);
         bool operator==(const DescendingIterator& other) const {return false;}
         bool operator!=(const DescendingIterator& other) const{return false;}
         bool operator>(const DescendingIterator& other) const{return false;}
         bool operator<(const DescendingIterator& other) const{return false;}
+        int operator*() const{return 0;}
+        DescendingIterator& operator++() {return *this;}
     };
 
     class MagicalContainer::SideCrossIterator {
@@ -71,14 +75,17 @@ namespace ariel{
         SideCrossIterator(const MagicalContainer& container);
         SideCrossIterator(const SideCrossIterator& other);
         ~SideCrossIterator() = default;
-        vector<int>::iterator begin();
-        vector<int>::iterator end();
+        SideCrossIterator(SideCrossIterator&& other) noexcept = default;
+        SideCrossIterator begin();
+        SideCrossIterator end();
         //operators
-        SideCrossIterator& operator=(const SideCrossIterator& other);
+        // SideCrossIterator& operator=(const SideCrossIterator& other);
         bool operator==(const SideCrossIterator& other) const{return false;}
         bool operator!=(const SideCrossIterator& other) const{return false;}
         bool operator>(const SideCrossIterator& other) const{return false;}
         bool operator<(const SideCrossIterator& other) const{return false;}
+        int operator*() const{return 0;}
+        SideCrossIterator& operator++() {return *this;}
     };
 
     class MagicalContainer::PrimeIterator {
@@ -89,14 +96,16 @@ namespace ariel{
         PrimeIterator(const MagicalContainer& container);
         PrimeIterator(const PrimeIterator& other);
         ~PrimeIterator() = default;
-        vector<int>::iterator begin();
-        vector<int>::iterator end();
+        PrimeIterator begin();
+        PrimeIterator end();
         //operators
-        PrimeIterator& operator=(const PrimeIterator& other);
+        // PrimeIterator& operator=(const PrimeIterator& other);
         bool operator==(const PrimeIterator& other) const{return false;}
         bool operator!=(const PrimeIterator& other) const{return false;}
         bool operator>(const PrimeIterator& other) const{return false;}
         bool operator<(const PrimeIterator& other) const{return false;}
+        int operator*() const{return 0;}
+        PrimeIterator& operator++() {return *this;}
     };
 }
 #endif
